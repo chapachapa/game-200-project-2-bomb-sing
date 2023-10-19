@@ -34,16 +34,16 @@ position = Vector2(0, 662)
 [node name="HUD" parent="." instance=ExtResource("4_lsjau")]
 
 [node name="Singing1" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_e6xq6")
+stream = ExtResource("5_pux3x")
 
 [node name="Singing2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_a1icr")
+stream = ExtResource("6_m7mwe")
 
 [node name="Singing3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_p5ax4")
 
 [node name="Singing4" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_m7mwe")
+stream = ExtResource("8_a1icr")
 
 [node name="Singing5" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_pux3x")
+stream = ExtResource("9_e6xq6")

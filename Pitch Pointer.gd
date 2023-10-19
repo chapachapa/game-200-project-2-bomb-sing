@@ -16,7 +16,7 @@ func _process(delta):
 	# vec = vec.normalized() * delta * SPEED # normalize it and multiply by time and speed
 	if(y_mouse_pos <= Y_MIN):
 		position = Vector2(X_POS, Y_MIN)
-	elif(y_mouse_pos >= Y_MAX):
+	elif(y_mouse_pos > Y_MAX):
 		position = Vector2(X_POS, Y_MAX)
 	else:
 		position = Vector2(X_POS, position.y + y_vec) # move by that vector
