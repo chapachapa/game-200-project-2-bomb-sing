@@ -1,0 +1,9 @@
+res://pitch_indicator.tscn
+res://pitch_box.tscn
+res://PitchBox.gd
+res://pitch_pointer.tscn
+res://main.tscn
+res://Main.gd
+res://Pitch Pointer.gd
+res://hud.tscn
+res://HUD.gd

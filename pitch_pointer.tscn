@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://qol5e18o4eka"]
+
+[ext_resource type="Script" path="res://Pitch Pointer.gd" id="1_8ly34"]
+[ext_resource type="Texture2D" uid="uid://citdb88hp0nka" path="res://images/indicator.png" id="2_olaml"]
+
+[node name="Pitch Pointer" type="Node2D"]
+script = ExtResource("1_8ly34")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_olaml")

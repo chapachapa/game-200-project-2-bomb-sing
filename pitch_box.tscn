@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://drxhbhxp4awp4"]
+
+[ext_resource type="Script" path="res://PitchBox.gd" id="1_wdxil"]
+[ext_resource type="Texture2D" uid="uid://duax85nei6ioi" path="res://images/ph-note.png" id="2_p5yi0"]
+
+[node name="PitchBox" type="Node2D"]
+script = ExtResource("1_wdxil")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_p5yi0")

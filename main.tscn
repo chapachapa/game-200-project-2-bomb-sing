@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctraf0w62v6a"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_6ucbu"]
+[ext_resource type="PackedScene" uid="uid://drxhbhxp4awp4" path="res://pitch_box.tscn" id="2_b0nyq"]
+[ext_resource type="PackedScene" uid="uid://qol5e18o4eka" path="res://pitch_pointer.tscn" id="2_o5j5k"]
+[ext_resource type="PackedScene" uid="uid://yb3fttgc707v" path="res://hud.tscn" id="4_lsjau"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_6ucbu")
+
+[node name="PitchPointer" parent="." instance=ExtResource("2_o5j5k")]
+position = Vector2(200, 450)
+
+[node name="Pitch1" parent="." instance=ExtResource("2_b0nyq")]
+position = Vector2(0, 230)
+
+[node name="Pitch2" parent="." instance=ExtResource("2_b0nyq")]
+position = Vector2(0, 338)
+
+[node name="Pitch3" parent="." instance=ExtResource("2_b0nyq")]
+position = Vector2(0, 446)
+
+[node name="Pitch4" parent="." instance=ExtResource("2_b0nyq")]
+position = Vector2(0, 554)
+
+[node name="Pitch5" parent="." instance=ExtResource("2_b0nyq")]
+position = Vector2(0, 662)
+
+[node name="HUD" parent="." instance=ExtResource("4_lsjau")]

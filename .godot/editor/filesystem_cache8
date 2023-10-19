@@ -1,0 +1,14 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1697704889
+HUD.gd::GDScript::-1::1697703141::0::1::::<>CanvasLayer<>::
+hud.tscn::PackedScene::1688306657405332057::1697704628::0::1::::<><>::res://HUD.gd
+icon.svg::CompressedTexture2D::7811845008301189718::1697695124::1697695130::1::::<><>::
+Main.gd::GDScript::-1::1697704626::0::1::::<>Node2D<>::
+main.tscn::PackedScene::180633355759183802::1697704628::0::1::::<><>::res://Main.gd<>uid://drxhbhxp4awp4::::res://pitch_box.tscn<>uid://qol5e18o4eka::::res://pitch_pointer.tscn<>uid://yb3fttgc707v::::res://hud.tscn
+Pitch Pointer.gd::GDScript::-1::1697704290::0::1::::<>Node2D<>::
+PitchBox.gd::GDScript::-1::1697698015::0::1::::<>Node2D<>::
+pitch_box.tscn::PackedScene::8400380289926762339::1697704628::0::1::::<><>::res://PitchBox.gd<>uid://duax85nei6ioi::::res://images/ph-note.png
+pitch_pointer.tscn::PackedScene::1152644499280470860::1697704628::0::1::::<><>::res://Pitch Pointer.gd<>uid://citdb88hp0nka::::res://images/indicator.png
+::res://images/::1697695991
+indicator.png::CompressedTexture2D::5373761015177992672::1697695982::1697695991::1::::<><>::
+ph-note.png::CompressedTexture2D::8564495941849063356::1697695899::1697695903::1::::<><>::
