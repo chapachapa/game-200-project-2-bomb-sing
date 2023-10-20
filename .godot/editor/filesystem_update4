@@ -1,7 +1,5 @@
 res://default_bus_layout.tres
-res://scenes/bomb.tscn
 res://levels/main.tscn
-res://scenes/slime.tscn
-res://scenes/bomb.gd
+res://Scripts/Global.gd
 res://scenes/wall.tscn
-res://scenes/wall.gd
+res://scenes/bomb.gd
