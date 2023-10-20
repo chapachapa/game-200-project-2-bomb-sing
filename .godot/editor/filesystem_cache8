@@ -1,15 +1,15 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1697786088
+::res://::1697787497
+default_bus_layout.tres::AudioBusLayout::8729446565192569189::1697787461::0::1::::<><>::
 HUD.gd::GDScript::-1::1697778297::0::1::::<>CanvasLayer<>::
 hud.tscn::PackedScene::1688306657405332057::1697778298::0::1::::<><>::res://HUD.gd
 icon.svg::CompressedTexture2D::7811845008301189718::1697778298::1697778298::1::::<><>::
 Main.gd::GDScript::-1::1697778297::0::1::::<>Node2D<>::
-main.tscn::PackedScene::180633355759183802::1697782068::0::1::::<><>::res://Main.gd<>uid://drxhbhxp4awp4::::res://pitch_box.tscn<>uid://qol5e18o4eka::::res://pitch_pointer.tscn<>uid://yb3fttgc707v::::res://hud.tscn<>uid://bgm7tj2byyyb8::::res://audio/C_1st_pitch.wav<>uid://ctenh5tu75hou::::res://audio/E_2nd_pitch.wav<>uid://digmwlkqgk2js::::res://audio/G_3rd_pitch.wav<>uid://cbg26mnkij54w::::res://audio/B_4rth_pitch.wav<>uid://csknsob3fap63::::res://audio/D_5th_pitch.wav
+main.tscn::PackedScene::180633355759183802::1697782068::0::1::::<><>::res://Main.gd<>uid://drxhbhxp4awp4
 Pitch Pointer.gd::GDScript::-1::1697778297::0::1::::<>Node2D<>::
 PitchBox.gd::GDScript::-1::1697778297::0::1::::<>Node2D<>::
-pitch_box.tscn::PackedScene::8400380289926762339::1697781348::0::1::::<><>::res://PitchBox.gd<>uid://duax85nei6ioi::::res://images/ph-note.png
-pitch_pointer.tscn::PackedScene::1152644499280470860::1697778298::0::1::::<><>::res://Pitch Pointer.gd<>uid://citdb88hp0nka::::res://images/indicator.png
-default_bus_layout.tres::AudioBusLayout::8729446565192569189::1697786088::0::1::::<><>::
+pitch_box.tscn::PackedScene::8400380289926762339::1697781348::0::1::::<><>::res://PitchBox.gd<>uid://duax85nei6ioi
+pitch_pointer.tscn::PackedScene::1152644499280470860::1697778298::0::1::::<><>::res://Pitch Pointer.gd<>uid://citdb88hp0nka
 ::res://audio/::1697784233
 120bpmDrum.wav::AudioStreamWAV::9037828454411923756::1697784165::1697784233::1::::<><>::
 Beat.wav::AudioStreamWAV::5938438645787284256::1697782419::1697783544::1::::<><>::
@@ -23,11 +23,13 @@ ABCOM_202203_1000x1000_CharacterDimensio_MinionPig_Classic.png::CompressedTextur
 Bob-omb_29.webp::CompressedTexture2D::8406157556996250512::1697782773::1697782773::1::::<><>::
 indicator.png::CompressedTexture2D::5373761015177992672::1697778298::1697778298::1::::<><>::
 ph-note.png::CompressedTexture2D::8564495941849063356::1697778298::1697778298::1::::<><>::
-::res://levels/::1697786317
-main.tscn::PackedScene::7890059269387452553::1697786331::0::1::::<><>::res://levels/main.gd<>uid://d108yju7m2ctg::::res://audio/120bpmDrum.wav<>uid://tyliybko6klq::::res://scenes/slime.tscn<>uid://djkd7fsc6fo7g::::res://icon.svg
-main.gd::GDScript::-1::1697786316::0::1::::<>Node<>::
-::res://scenes/::1697786317
-bomb.tscn::PackedScene::549638029115257370::1697786317::0::1::::<><>::res://scenes/bomb.gd<>uid://dr1agl7liiweq::::res://images/Bob-omb_29.webp
-bomb.gd::GDScript::-1::1697786095::0::1::::<>Node2D<>::
+::res://levels/::1697787491
+main.gd::GDScript::-1::1697786909::0::1::::<>Node<>::
+main.tscn::PackedScene::7890059269387452553::1697787491::0::1::::<><>::res://levels/main.gd<>uid://d108yju7m2ctg::::res://audio/120bpmDrum.wav<>uid://tyliybko6klq::::res://scenes/slime.tscn<>uid://djkd7fsc6fo7g::::res://icon.svg
+::res://scenes/::1697787492
+bomb.gd::GDScript::-1::1697786555::0::1::::<>Node2D<>::
+bomb.tscn::PackedScene::549638029115257370::1697787492::0::1::::<><>::res://scenes/bomb.gd<>uid://dr1agl7liiweq::::res://images/Bob-omb_29.webp
 slime.gd::GDScript::-1::1697783703::0::1::::<>RigidBody2D<>::
-slime.tscn::PackedScene::1383816531071221382::1697786317::0::1::::<><>::res://scenes/slime.gd<>uid://c5abqxo71ghm::::res://images/ABCOM_202203_1000x1000_CharacterDimensio_MinionPig_Classic.png
+slime.tscn::PackedScene::1383816531071221382::1697787492::0::1::::<><>::res://scenes/slime.gd<>uid://c5abqxo71ghm::::res://images/ABCOM_202203_1000x1000_CharacterDimensio_MinionPig_Classic.png
+::res://Scripts/::1697786752
+Global.gd::GDScript::-1::1697786752::0::1::::<>Node<>::

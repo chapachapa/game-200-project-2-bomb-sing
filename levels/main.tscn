@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkoaegwxsm1q8"]
+[gd_scene load_steps=8 format=3 uid="uid://dkoaegwxsm1q8"]
 
 [ext_resource type="Script" path="res://levels/main.gd" id="1_tqmxc"]
 [ext_resource type="AudioStream" uid="uid://d108yju7m2ctg" path="res://audio/120bpmDrum.wav" id="4_8l4il"]
 [ext_resource type="PackedScene" uid="uid://tyliybko6klq" path="res://scenes/slime.tscn" id="4_kuutn"]
 [ext_resource type="Texture2D" uid="uid://djkd7fsc6fo7g" path="res://icon.svg" id="4_x8ba1"]
+[ext_resource type="PackedScene" uid="uid://d13dr7uqqhmas" path="res://scenes/wall.tscn" id="5_frd87"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f71jp"]
 size = Vector2(126, 131)
@@ -46,17 +47,6 @@ texture = ExtResource("4_x8ba1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D2"]
 shape = SubResource("RectangleShape2D_f71jp")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="Node2D"]
-position = Vector2(-565, -474)
-rotation = 1.5708
-scale = Vector2(5.16199, 1.11355)
-
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/StaticBody2D3"]
-texture = ExtResource("4_x8ba1")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D3"]
-shape = SubResource("RectangleShape2D_f71jp")
-
 [node name="StaticBody2D4" type="StaticBody2D" parent="Node2D"]
 position = Vector2(-130, 453)
 rotation = 1.5708
@@ -67,6 +57,12 @@ texture = ExtResource("4_x8ba1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D4"]
 shape = SubResource("RectangleShape2D_f71jp")
+
+[node name="Wall" parent="Node2D" instance=ExtResource("5_frd87")]
+position = Vector2(-479, -416)
+
+[node name="Wall2" parent="Node2D" instance=ExtResource("5_frd87")]
+position = Vector2(83, -308)
 
 [node name="StartPos" type="Node2D" parent="Node2D"]
 position = Vector2(-858, 0)
