@@ -6,3 +6,5 @@ res://scenes/bomb.gd
 res://levels/main.gd
 res://scenes/slime.tscn
 res://scenes/slime.gd
+res://default_bus_layout.tres
+res://Scripts/Global.gd

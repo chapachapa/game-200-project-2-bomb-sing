@@ -42,21 +42,24 @@ func _process(_delta):
 			on_bar(beat % 4)
 		
 	previous_beat = beat
+	
+	# update UI
+	$CanvasLayer/Control/ProgressBar.set_value(Global.volume)
 
 
 func on_beat(beat):
-	print("beat %d" % beat)
+	#print("beat %d" % beat)
 	
 	for i in get_tree().get_nodes_in_group("beat"):
 		i.on_beat(beat)
 	
 	# spawn a new bomb every 4 bar
-	if ((beat - 1) % 8 == 0):
+	if ((beat - 1) % 4 == 0):
 		launch_bomb()
 
 
 func on_bar(bar):
-	print("bar %d" % bar)
+	#print("bar %d" % bar)
 	
 	for i in get_tree().get_nodes_in_group("beat"):
 		i.on_bar(bar)
