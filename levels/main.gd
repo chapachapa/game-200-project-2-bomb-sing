@@ -44,7 +44,9 @@ func _process(_delta):
 	previous_beat = beat
 	
 	# update UI
-	$CanvasLayer/Control/ProgressBar.set_value(Global.volume)
+	$CanvasLayer/Control/Volume.set_value(Global.volume)
+	$CanvasLayer/Control/Pitch.set_value(Global.energy)
+	print(Global.magnitude)
 
 
 func on_beat(beat):

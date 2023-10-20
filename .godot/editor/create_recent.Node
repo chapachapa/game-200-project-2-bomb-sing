@@ -1,3 +1,4 @@
+Label
 ProgressBar
 AudioStreamPlayer
 Node2D
@@ -10,4 +11,3 @@ Camera2D
 Control
 CanvasLayer
 Node
-Label
