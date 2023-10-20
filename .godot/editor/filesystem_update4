@@ -1,6 +1,8 @@
-res://main.tscn
-res://Main.gd
 res://pitch_box.tscn
-res://pitch_pointer.tscn
-res://hud.tscn
-res://Pitch Pointer.gd
+res://main.tscn
+res://levels/main.tscn
+res://scenes/bomb.tscn
+res://scenes/bomb.gd
+res://levels/main.gd
+res://scenes/slime.tscn
+res://scenes/slime.gd

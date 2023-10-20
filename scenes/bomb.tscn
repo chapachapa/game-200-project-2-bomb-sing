@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://h3iptqwsmuh3"]
+
+[ext_resource type="Script" path="res://scenes/bomb.gd" id="1_eotk0"]
+[ext_resource type="Texture2D" uid="uid://dr1agl7liiweq" path="res://images/Bob-omb_29.webp" id="2_joo4q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pwuk5"]
+radius = 225.299
+
+[node name="Bomb" type="Area2D" groups=["beat"]]
+position = Vector2(-2, -4)
+scale = Vector2(0.239723, 0.239723)
+collision_layer = 2
+collision_mask = 7
+monitorable = false
+script = ExtResource("1_eotk0")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_joo4q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pwuk5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

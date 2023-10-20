@@ -1,0 +1,84 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkoaegwxsm1q8"]
+
+[ext_resource type="Script" path="res://levels/main.gd" id="1_tqmxc"]
+[ext_resource type="AudioStream" uid="uid://d108yju7m2ctg" path="res://audio/120bpmDrum.wav" id="4_8l4il"]
+[ext_resource type="PackedScene" uid="uid://tyliybko6klq" path="res://scenes/slime.tscn" id="4_kuutn"]
+[ext_resource type="Texture2D" uid="uid://djkd7fsc6fo7g" path="res://icon.svg" id="4_x8ba1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f71jp"]
+size = Vector2(126, 131)
+
+[node name="Main" type="Node"]
+script = ExtResource("1_tqmxc")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="Node2D"]
+
+[node name="Slime" parent="Node2D" instance=ExtResource("4_kuutn")]
+position = Vector2(-130, 0)
+
+[node name="Slime2" parent="Node2D" instance=ExtResource("4_kuutn")]
+position = Vector2(422, 271)
+
+[node name="Slime3" parent="Node2D" instance=ExtResource("4_kuutn")]
+position = Vector2(555, -308)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+position = Vector2(555, 524)
+scale = Vector2(5.16199, 1.11355)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/StaticBody2D"]
+texture = ExtResource("4_x8ba1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+shape = SubResource("RectangleShape2D_f71jp")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D"]
+position = Vector2(555, 98)
+scale = Vector2(5.16199, 1.11355)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/StaticBody2D2"]
+texture = ExtResource("4_x8ba1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D2"]
+shape = SubResource("RectangleShape2D_f71jp")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Node2D"]
+position = Vector2(-333, -505)
+rotation = 1.5708
+scale = Vector2(5.16199, 1.11355)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/StaticBody2D3"]
+texture = ExtResource("4_x8ba1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D3"]
+shape = SubResource("RectangleShape2D_f71jp")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Node2D"]
+position = Vector2(-130, 453)
+rotation = 1.5708
+scale = Vector2(5.16199, 1.11355)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/StaticBody2D4"]
+texture = ExtResource("4_x8ba1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D4"]
+shape = SubResource("RectangleShape2D_f71jp")
+
+[node name="StartPos" type="Node2D" parent="Node2D"]
+position = Vector2(-858, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Beat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_8l4il")
+autoplay = true

@@ -47,3 +47,5 @@ stream = ExtResource("6_m7mwe")
 
 [node name="Singing5" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_pux3x")
+
+[node name="Node" type="Node" parent="."]
