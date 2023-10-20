@@ -6,8 +6,8 @@ var volume = 0.0
 var energy = 0.0
 var magnitude = 0.0
 var spectrum_analyzer: AudioEffectSpectrumAnalyzerInstance
-const MAX_FREQ = 5000;
-const MIN_FREQ = 0;
+const MAX_FREQ = 900;
+const MIN_FREQ = 100;
 const FREQ_INTERVAL = 10;
 var magnitueds_by_range = [];
 
