@@ -1,8 +1,10 @@
+Label
+Line2D
+ProgressBar
+Container
 CollisionShape2D
 StaticBody2D
 CPUParticles2D
-Label
-ProgressBar
 AudioStreamPlayer
 Node2D
 Area2D

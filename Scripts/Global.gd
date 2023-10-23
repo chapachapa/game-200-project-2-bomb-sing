@@ -6,10 +6,11 @@ var volume = 0.0
 var energy = 0.0
 var magnitude = 0.0
 var spectrum_analyzer: AudioEffectSpectrumAnalyzerInstance
-const MAX_FREQ = 900;
+const MAX_FREQ = 2000;
 const MIN_FREQ = 100;
 const FREQ_INTERVAL = 10;
 var magnitueds_by_range = [];
+var highestFrequencyIndex = -1;
 
 
 func _ready():
@@ -23,7 +24,10 @@ func _process(delta):
 	# find the pitch
 	# magnitude = linear_to_db(spectrum_analyzer.get_magnitude_for_frequency_range(0, 200).length())
 	var max = 0;
-	var mIndex = -1;
+	
+	if magnitueds_by_range.size() != floor((MAX_FREQ - MIN_FREQ) / FREQ_INTERVAL):
+		magnitueds_by_range.resize(floor((MAX_FREQ - MIN_FREQ) / FREQ_INTERVAL))
+		
 	for n in floor((MAX_FREQ - MIN_FREQ) / FREQ_INTERVAL):
 		var freq = MIN_FREQ + (FREQ_INTERVAL * n);
 		var intervalMagnitudeVector = spectrum_analyzer.get_magnitude_for_frequency_range(
@@ -31,14 +35,15 @@ func _process(delta):
 			freq+FREQ_INTERVAL, 
 			AudioEffectSpectrumAnalyzerInstance.MAGNITUDE_AVERAGE);
 		var intervalMagnitudeAverage = intervalMagnitudeVector.x + intervalMagnitudeVector.y / 2;
+		magnitueds_by_range[n] = intervalMagnitudeAverage;
 		if intervalMagnitudeAverage > max:
-			mIndex = n;
+			highestFrequencyIndex = n;
 			max = intervalMagnitudeAverage;
-	print("::::::::::::::::::::: highest in range is .... ", mIndex, " ... ", mIndex / 30.0);
-	mIndex;
+	
+	# print("::::::::::::::::::::: highest in range is .... ", mIndex, " ... ", magnitueds_by_range[mIndex] );
 		
 	
 	# boost the signal and normalize it
 	#energy = clamp((MIN_DB + (magnitude))/MIN_DB, 0, 1)
-	energy = mIndex / 30.0;
-	print(energy)
+	energy = highestFrequencyIndex / 30.0;
+	# print(energy)
