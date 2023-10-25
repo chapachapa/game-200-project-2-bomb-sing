@@ -46,7 +46,9 @@ func _process(_delta):
 	# update UI
 	$CanvasLayer/Control/Volume.set_value(Global.volume)
 	$CanvasLayer/Control/Pitch.set_value(Global.energy)
-	print(Global.magnitude)
+	$CanvasLayer/SpectrumVisualizer.spect_array = Global.magnitueds_by_range
+	$CanvasLayer/SpectrumVisualizer/highest.set_text(str(Global.highestFrequencyIndex))
+	#print(Global.magnitude)
 
 
 func on_beat(beat):
