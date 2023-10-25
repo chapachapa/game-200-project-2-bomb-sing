@@ -18,6 +18,10 @@ script = ExtResource("1_tqmxc")
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="Node2D"]
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_right_margin = 0.0
 
 [node name="Slime" parent="Node2D" instance=ExtResource("4_kuutn")]
 position = Vector2(-130, 0)
