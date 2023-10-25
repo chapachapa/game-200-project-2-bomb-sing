@@ -16,7 +16,7 @@ func _physics_process(delta):
 	move_local_x(speed)
 	
 	# move the bomb by pitch and volume
-	if(Global.volume > 0.1):
+	if(Global.volume > Global.volumeThreshold):
 		move_local_y((Global.energy - 0.5) * -1 * 20)
 
 

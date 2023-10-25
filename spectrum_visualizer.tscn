@@ -15,9 +15,38 @@ theme = SubResource("Theme_aivtt")
 script = ExtResource("1_ked8h")
 metadata/_edit_lock_ = true
 
-[node name="HSlider" type="HSlider" parent="."]
+[node name="lowerBound" type="HSlider" parent="."]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 350.0
 offset_right = 481.0
 offset_bottom = 381.0
+tick_count = 1
+
+[node name="upperBound" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 374.0
+offset_right = 757.0
+offset_bottom = 405.0
+value = 29.0
+tick_count = 1
+
+[node name="lowerLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = -28.0
+offset_top = 354.0
+offset_right = 12.0
+offset_bottom = 377.0
+text = "0"
+
+[node name="upperLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = -26.0
+offset_top = 373.0
+offset_right = 14.0
+offset_bottom = 396.0
+text = "29"
+
+[connection signal="value_changed" from="lowerBound" to="." method="_on_lower_bound_value_changed"]
+[connection signal="value_changed" from="upperBound" to="." method="_on_upper_bound_value_changed"]
