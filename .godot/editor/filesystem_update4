@@ -1,4 +1,7 @@
 res://default_bus_layout.tres
 res://levels/main.tscn
-res://spectrum_analyzer.tscn
+res://levels/main.gd
+res://scenes/bomb.gd
 res://spectrum_visualizer.tscn
+res://Scripts/Global.gd
+res://scenes/bomb.tscn
