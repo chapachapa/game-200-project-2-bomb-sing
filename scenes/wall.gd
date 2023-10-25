@@ -1,8 +1,8 @@
 extends StaticBody2D
 
 @export var moving = false
-@export var move_beat = 0
-var index = 0
+@export var move_beat = 2
+var index = 1
 var positions = []
 
 
@@ -17,13 +17,14 @@ func _physics_process(delta):
 
 
 func on_beat(beat):
-	$Sprite.set_scale(Vector2(1.1, 1.1))
-	var tween = get_tree().create_tween().set_trans(Tween.TRANS_BOUNCE)
-	tween.tween_property($Sprite, "scale", Vector2(1, 1), 0.2)
-	
-	tween.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
-	tween.parallel().tween_property(self, "position", positions[index], 0.2)
-	index = wrapi(index + 1, 0, positions.size())
+	if moving and beat % move_beat == 0:
+		$Sprite.set_scale(Vector2(1.1, 1.1))
+		var tween = get_tree().create_tween().set_trans(Tween.TRANS_BOUNCE)
+		tween.tween_property($Sprite, "scale", Vector2(1, 1), 0.2)
+		
+		tween.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+		tween.parallel().tween_property(self, "position", positions[index], 0.2)
+		index = wrapi(index + 1, 0, positions.size())
 
 
 func on_bar(bar):
