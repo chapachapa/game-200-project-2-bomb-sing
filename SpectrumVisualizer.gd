@@ -23,6 +23,8 @@ func _ready():
 	defaultFillStyle.bg_color = Color("555555", 0.5)
 	lowerBoundIndex = Global.lowerFreqIndex
 	upperBoundIndex = Global.upperFreqIndex
+	$upperBound.value = upperBoundIndex
+	$lowerBound.value = lowerBoundIndex
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -42,8 +44,8 @@ func _process(delta):
 	$lowerBound.set_size(Vector2(bar_width * barCount, 10))
 	$upperBound.max_value = barCount
 	$lowerBound.max_value = barCount
-	$lowerLabel.text = str(lowerBoundIndex)
-	$upperLabel.text = str(upperBoundIndex)
+	$lowerLabel.text = "MIN: " + str(lowerBoundIndex)
+	$upperLabel.text = "MAX: " + str(upperBoundIndex)
 
 	for i in spect_array.size():
 		if !progress_bar_array[i]: 
