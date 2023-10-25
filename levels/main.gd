@@ -55,7 +55,6 @@ func _process(_delta):
 	$CanvasLayer/Control/Volume.set_value(Global.volume)
 	$CanvasLayer/Control/Pitch.set_value(Global.energy)
 	$CanvasLayer/SpectrumVisualizer.spect_array = Global.magnitueds_by_range
-	$CanvasLayer/SpectrumVisualizer/highest.set_text(str(Global.highestFrequencyIndex))
 	#print(Global.magnitude)
 
 

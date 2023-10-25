@@ -7,10 +7,13 @@ var energy = 0.0
 var magnitude = 0.0
 var spectrum_analyzer: AudioEffectSpectrumAnalyzerInstance
 const MAX_FREQ = 2000;
-const MIN_FREQ = 100;
+const MIN_FREQ = 0;
 const FREQ_INTERVAL = 10;
 var magnitueds_by_range = [];
 var highestFrequencyIndex = -1;
+var upperFreqIndex = 40;
+var lowerFreqIndex = 10
+var volumeThreshold = 0.05;
 
 # player state
 var checkpoint = Vector2.ZERO
@@ -48,5 +51,5 @@ func _process(delta):
 	
 	# boost the signal and normalize it
 	#energy = clamp((MIN_DB + (magnitude))/MIN_DB, 0, 1)
-	energy = highestFrequencyIndex / 30.0;
+	energy = clamp((highestFrequencyIndex-lowerFreqIndex) / (upperFreqIndex - lowerFreqIndex), 0, 1)
 	# print(energy)
