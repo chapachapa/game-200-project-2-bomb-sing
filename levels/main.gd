@@ -74,7 +74,8 @@ func on_bar(bar):
 	#print("bar %d" % bar)
 	
 	for i in get_tree().get_nodes_in_group("beat"):
-		i.on_bar(bar)
+		if i.has_method("on_bar"):
+			i.on_bar(bar)
 
 
 func launch_bomb():
@@ -91,7 +92,7 @@ func bomb_destroyed():
 	camera_following = false
 	print("OOPS")
 	
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(1.0).timeout
 	
 	launch_bomb()
 	camera_following = true

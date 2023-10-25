@@ -4,6 +4,9 @@ signal bomb_destroyed
 
 @export var speed = 5
 
+var explosion_particle = preload("res://scenes/particles/explosion_particle.tscn")
+
+
 func _ready():
 	var devices = AudioServer.get_input_device_list()
 	#print(devices)
@@ -18,18 +21,37 @@ func _physics_process(delta):
 
 
 func on_beat(beat):
-	$Sprite.set_scale(Vector2(0.16, 0.16))
+	$Sprite.set_scale(Vector2(0.314, 0.314) * 1.2)
 	var tween = get_tree().create_tween().set_trans(Tween.TRANS_BOUNCE)
-	tween.tween_property($Sprite, "scale", Vector2(0.146, 0.146), 0.2)
+	tween.tween_property($Sprite, "scale", Vector2(0.314, 0.314), 0.2)
 
 
 func on_bar(bar):
 	pass
 
 
+func _input(event):
+	if Input.is_action_just_pressed("explode"):
+		on_damage()
+
+
 func _on_body_entered(body):
-	if "Slime" in body.name:
-		body.queue_free()
+	if body.has_method("on_damage"):
+		body.on_damage()
+	
+	on_damage()
+
+
+func on_damage():
+	var e = explosion_particle.instantiate()
+	get_parent().add_child(e)
+	e.set_global_position(get_global_position())
+	
+	# effect things around the object
+	for i in $ExtraRange.get_overlapping_bodies():
+		if i.has_method("on_shocked"):
+			i.on_shocked(get_global_position(), 1000)
 	
 	emit_signal("bomb_destroyed")
+	
 	queue_free()
