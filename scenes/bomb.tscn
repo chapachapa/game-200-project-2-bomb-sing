@@ -1,25 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://h3iptqwsmuh3"]
+[gd_scene load_steps=6 format=3 uid="uid://h3iptqwsmuh3"]
 
 [ext_resource type="Script" path="res://scenes/bomb.gd" id="1_eotk0"]
 [ext_resource type="Texture2D" uid="uid://dr1agl7liiweq" path="res://images/Bob-omb_29.webp" id="2_joo4q"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_pwuk5"]
-radius = 28.0179
+[sub_resource type="CircleShape2D" id="CircleShape2D_2ryed"]
+radius = 64.0
 
 [sub_resource type="Gradient" id="Gradient_wb4x3"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0lgvo"]
+radius = 320.0
+
 [node name="Bomb" type="Area2D" groups=["beat"]]
 collision_layer = 2
-collision_mask = 7
+collision_mask = 15
 script = ExtResource("1_eotk0")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.145956, 0.145956)
+scale = Vector2(0.314175, 0.314175)
 texture = ExtResource("2_joo4q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_pwuk5")
+shape = SubResource("CircleShape2D_2ryed")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 z_index = -20
@@ -30,5 +33,12 @@ gravity = Vector2(0, 0)
 scale_amount_max = 31.3
 color = Color(0.733333, 0.631373, 0.572549, 0.501961)
 color_ramp = SubResource("Gradient_wb4x3")
+
+[node name="ExtraRange" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExtraRange"]
+shape = SubResource("CircleShape2D_0lgvo")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
