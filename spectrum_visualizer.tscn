@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://vtj3oygoeoja"]
+[gd_scene load_steps=3 format=3 uid="uid://vtj3oygoeoja"]
 
 [ext_resource type="Script" path="res://SpectrumVisualizer.gd" id="1_ked8h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_su4bg"]
 
 [node name="Spectrum Analyzer" type="Control"]
 layout_mode = 3
@@ -12,10 +14,17 @@ grow_vertical = 2
 script = ExtResource("1_ked8h")
 metadata/_edit_lock_ = true
 
-[node name="highest" type="Label" parent="."]
+[node name="HSlider" type="HSlider" parent="."]
 layout_mode = 0
-offset_left = 79.0
-offset_top = 1.0
-offset_right = 119.0
-offset_bottom = 27.0
-text = "0"
+offset_left = 37.0
+offset_top = 363.0
+offset_right = 490.0
+offset_bottom = 394.0
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 532.0
+offset_top = 22.0
+offset_right = 707.0
+offset_bottom = 343.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_su4bg")

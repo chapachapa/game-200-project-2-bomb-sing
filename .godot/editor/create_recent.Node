@@ -1,6 +1,7 @@
+ProgressBar
+HSlider
 Label
 Line2D
-ProgressBar
 Container
 CollisionShape2D
 StaticBody2D
