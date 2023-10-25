@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://3jx5u0xkinkj" path="res://images/Iron_Block.png" id="2_1v4u4"]
 [ext_resource type="AudioStream" uid="uid://d108yju7m2ctg" path="res://audio/120bpmDrum.wav" id="4_8l4il"]
 [ext_resource type="PackedScene" uid="uid://tyliybko6klq" path="res://scenes/slime.tscn" id="4_kuutn"]
-[ext_resource type="PackedScene" uid="uid://bd51smv6atdfy" path="res://scenes/breakable_wall.tscn" id="4_otc74"]
+[ext_resource type="PackedScene" path="res://scenes/breakable_wall.tscn" id="4_otc74"]
 [ext_resource type="PackedScene" uid="uid://d13dr7uqqhmas" path="res://scenes/wall.tscn" id="5_frd87"]
 [ext_resource type="PackedScene" uid="uid://vtj3oygoeoja" path="res://spectrum_visualizer.tscn" id="5_yqube"]
-[ext_resource type="PackedScene" uid="uid://crx00k37npteq" path="res://scenes/trashs.tscn" id="6_rpt4x"]
-[ext_resource type="PackedScene" uid="uid://tedcqptfcj86" path="res://scenes/touchpoint.tscn" id="7_pxgp8"]
+[ext_resource type="PackedScene" path="res://scenes/trashs.tscn" id="6_rpt4x"]
+[ext_resource type="PackedScene" path="res://scenes/touchpoint.tscn" id="7_pxgp8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6s6i6"]
 texture = ExtResource("2_1v4u4")
