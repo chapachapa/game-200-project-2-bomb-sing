@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx621ksiwfagi"]
+
+[ext_resource type="Texture2D" uid="uid://b0q2orc732s05" path="res://images/5W3UH8.png" id="1_b74ms"]
+[ext_resource type="Script" path="res://scenes/particles/explosion_particle.gd" id="1_u8na4"]
+
+[sub_resource type="Gradient" id="Gradient_tyhem"]
+offsets = PackedFloat32Array(0, 0.0829493, 1)
+colors = PackedColorArray(1, 0.906812, 0.833455, 1, 0.78, 0.0156, 0.0283398, 1, 0, 0, 0, 0)
+
+[node name="ExplosionParticle" type="Node2D"]
+script = ExtResource("1_u8na4")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 10
+one_shot = true
+explosiveness = 0.83
+randomness = 0.67
+lifetime_randomness = 0.57
+texture = ExtResource("1_b74ms")
+emission_shape = 1
+emission_sphere_radius = 128.0
+spread = 180.0
+gravity = Vector2(0, 20)
+initial_velocity_min = 166.67
+initial_velocity_max = 166.67
+angular_velocity_max = 240.0
+damping_max = 36.544
+scale_amount_min = 0.2
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_tyhem")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

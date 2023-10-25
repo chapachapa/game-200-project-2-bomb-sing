@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://tyliybko6klq"]
+
+[ext_resource type="Script" path="res://scenes/slime.gd" id="1_3018h"]
+[ext_resource type="Texture2D" uid="uid://c5abqxo71ghm" path="res://images/ABCOM_202203_1000x1000_CharacterDimensio_MinionPig_Classic.png" id="1_q5ubl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fbayd"]
+radius = 81.0555
+
+[node name="Slime" type="RigidBody2D" groups=["beat"]]
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_3018h")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -64)
+scale = Vector2(0.266846, 0.266846)
+texture = ExtResource("1_q5ubl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fbayd")

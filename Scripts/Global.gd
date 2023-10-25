@@ -12,6 +12,9 @@ const FREQ_INTERVAL = 10;
 var magnitueds_by_range = [];
 var highestFrequencyIndex = -1;
 
+# player state
+var checkpoint = Vector2.ZERO
+
 
 func _ready():
 	spectrum_analyzer = AudioServer.get_bus_effect_instance(3, 0)
