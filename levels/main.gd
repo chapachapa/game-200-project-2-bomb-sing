@@ -68,6 +68,11 @@ func _process(_delta):
 	
 	if Input.is_action_just_pressed("calibration"):
 		$CanvasLayer/SpectrumVisualizer.set_visible(!$CanvasLayer/SpectrumVisualizer.visible)
+		
+	if Global.volume > Global.volumeThreshold:
+		$CanvasLayer/Control/PitchDirectionIndicator.rotation_degrees = -180*(Global.energy-0.5)
+	else:
+		$CanvasLayer/Control/PitchDirectionIndicator.rotation_degrees = 0
 
 func on_beat(beat):
 	#print("beat %d" % beat)
