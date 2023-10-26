@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dkoaegwxsm1q8"]
+[gd_scene load_steps=15 format=3 uid="uid://dkoaegwxsm1q8"]
 
 [ext_resource type="Script" path="res://levels/main.gd" id="1_tqmxc"]
 [ext_resource type="Texture2D" uid="uid://3jx5u0xkinkj" path="res://images/Iron_Block.png" id="2_1v4u4"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://vtj3oygoeoja" path="res://spectrum_visualizer.tscn" id="5_yqube"]
 [ext_resource type="PackedScene" uid="uid://crx00k37npteq" path="res://scenes/trashs.tscn" id="6_rpt4x"]
 [ext_resource type="PackedScene" uid="uid://tedcqptfcj86" path="res://scenes/touchpoint.tscn" id="7_pxgp8"]
+[ext_resource type="Texture2D" uid="uid://cqu10vt0p5vs5" path="res://images/arroww.png" id="8_o7wn8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6s6i6"]
 texture = ExtResource("2_1v4u4")
@@ -274,11 +275,29 @@ offset_bottom = -12.0
 grow_vertical = 0
 text = "Pitch"
 
+[node name="PitchDirectionIndicator" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -212.5
+offset_top = -82.0
+offset_right = 212.5
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(213, 82)
+texture = ExtResource("8_o7wn8")
+
 [node name="SpectrumVisualizer" parent="CanvasLayer" instance=ExtResource("5_yqube")]
 offset_left = 61.0
 offset_top = 119.0
 offset_right = 61.0
 offset_bottom = 119.0
+metadata/_edit_lock_ = true
 
 [node name="Beat" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_8l4il")

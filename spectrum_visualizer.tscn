@@ -1,8 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://vtj3oygoeoja"]
 
+[ext_resource type="Theme" uid="uid://ixosuarf60w6" path="res://ui.tres" id="1_j3hnn"]
 [ext_resource type="Script" path="res://SpectrumVisualizer.gd" id="1_ked8h"]
-
-[sub_resource type="Theme" id="Theme_aivtt"]
 
 [node name="Spectrum Analyzer" type="Control"]
 layout_mode = 3
@@ -11,42 +10,63 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_aivtt")
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_j3hnn")
 script = ExtResource("1_ked8h")
-metadata/_edit_lock_ = true
 
-[node name="lowerBound" type="HSlider" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 0
-offset_left = 28.0
-offset_top = 350.0
-offset_right = 481.0
-offset_bottom = 381.0
+offset_right = 996.0
+offset_bottom = 512.0
+
+[node name="UIContainer" type="MarginContainer" parent="CenterContainer"]
+layout_mode = 2
+theme = ExtResource("1_j3hnn")
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="UIRows" type="VBoxContainer" parent="CenterContainer/UIContainer"]
+layout_mode = 2
+
+[node name="Visualizer" type="HBoxContainer" parent="CenterContainer/UIContainer/UIRows"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="FrequencyControls" type="VBoxContainer" parent="CenterContainer/UIContainer/UIRows"]
+layout_mode = 2
+
+[node name="lowerBound" type="HSlider" parent="CenterContainer/UIContainer/UIRows/FrequencyControls"]
+layout_mode = 2
 tick_count = 1
 
-[node name="upperBound" type="HSlider" parent="."]
-layout_mode = 0
-offset_left = 28.0
-offset_top = 374.0
-offset_right = 757.0
-offset_bottom = 405.0
+[node name="upperBound" type="HSlider" parent="CenterContainer/UIContainer/UIRows/FrequencyControls"]
+layout_mode = 2
 value = 29.0
 tick_count = 1
 
-[node name="lowerLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = -28.0
-offset_top = 354.0
-offset_right = 12.0
-offset_bottom = 377.0
+[node name="lowerLabel" type="Label" parent="CenterContainer/UIContainer/UIRows/FrequencyControls"]
+layout_mode = 2
 text = "0"
 
-[node name="upperLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = -26.0
-offset_top = 373.0
-offset_right = 14.0
-offset_bottom = 396.0
+[node name="upperLabel" type="Label" parent="CenterContainer/UIContainer/UIRows/FrequencyControls"]
+layout_mode = 2
 text = "29"
 
-[connection signal="value_changed" from="lowerBound" to="." method="_on_lower_bound_value_changed"]
-[connection signal="value_changed" from="upperBound" to="." method="_on_upper_bound_value_changed"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/UIContainer/UIRows"]
+layout_mode = 2
+
+[node name="VSlider" type="VSlider" parent="CenterContainer/UIContainer/UIRows/HBoxContainer"]
+layout_mode = 2
+
+[node name="VSlider2" type="VSlider" parent="CenterContainer/UIContainer/UIRows/HBoxContainer"]
+layout_mode = 2
+
+[node name="VSlider3" type="VSlider" parent="CenterContainer/UIContainer/UIRows/HBoxContainer"]
+layout_mode = 2
+
+[connection signal="value_changed" from="CenterContainer/UIContainer/UIRows/FrequencyControls/lowerBound" to="." method="_on_lower_bound_value_changed"]
+[connection signal="value_changed" from="CenterContainer/UIContainer/UIRows/FrequencyControls/upperBound" to="." method="_on_upper_bound_value_changed"]

@@ -15,7 +15,7 @@ const MIN_FREQ = 0;
 const FREQ_INTERVAL = 10;
 var magnitueds_by_range = [];
 var highestFrequencyIndex = -1;
-var upperFreqIndex = 40;
+var upperFreqIndex = 35;
 var lowerFreqIndex = 10
 var volumeThreshold = 0.05;
 
