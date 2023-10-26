@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d13dr7uqqhmas"]
 
 [ext_resource type="Script" path="res://scenes/wall.gd" id="1_pskxt"]
-[ext_resource type="Texture2D" uid="uid://djkd7fsc6fo7g" path="res://icon.svg" id="1_vqokx"]
+[ext_resource type="Texture2D" uid="uid://cge47qqm65ubc" path="res://images/Steel_Block.png" id="2_4v8cd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7341b"]
 size = Vector2(126, 124.5)
@@ -10,7 +10,7 @@ size = Vector2(126, 124.5)
 script = ExtResource("1_pskxt")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_vqokx")
+texture = ExtResource("2_4v8cd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_7341b")

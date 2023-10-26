@@ -3,17 +3,11 @@ extends StaticBody2D
 @export var moving = false
 @export var move_beat = 2
 
-# this is a temporary test
-@export var moving_location = 2
-
-
 var index = 1
 var positions = []
 
 
 func _ready():
-	$Location2.set_position(Vector2(0, 128 * moving_location))
-	
 	for i in range(1, 3):
 		positions.append(get_node("Location%d" % i).get_global_position())
 		print(get_node("Location%d" % i).get_position())
