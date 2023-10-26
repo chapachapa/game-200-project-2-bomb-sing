@@ -15,6 +15,8 @@ var time_delay
 var bomb = preload("res://scenes/bomb.tscn")
 var camera_following = false
 
+# show/hide UI
+var showVisualizer = true;
 
 func _ready():
 	Global.main_scene = self
@@ -63,7 +65,9 @@ func _process(_delta):
 	$CanvasLayer/Control/Pitch.set_value(Global.energy)
 	$CanvasLayer/SpectrumVisualizer.spect_array = Global.magnitueds_by_range
 	#print(Global.magnitude)
-
+	
+	if Input.is_action_just_pressed("calibration"):
+		$CanvasLayer/SpectrumVisualizer.set_visible(!$CanvasLayer/SpectrumVisualizer.visible)
 
 func on_beat(beat):
 	#print("beat %d" % beat)
