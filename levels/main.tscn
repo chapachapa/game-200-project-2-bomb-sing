@@ -62,7 +62,16 @@ layer_1/tile_data = PackedInt32Array()
 position = Vector2(-3200, 0)
 
 [node name="Slime" parent="Node2D" instance=ExtResource("4_kuutn")]
-position = Vector2(-130, 0)
+position = Vector2(-129, 83)
+
+[node name="Slime" parent="Node2D/Slime" instance=ExtResource("4_kuutn")]
+position = Vector2(0, -74)
+
+[node name="Slime2" parent="Node2D/Slime" instance=ExtResource("4_kuutn")]
+position = Vector2(0, -148)
+
+[node name="Slime3" parent="Node2D/Slime" instance=ExtResource("4_kuutn")]
+position = Vector2(0, -218)
 
 [node name="Slime2" parent="Node2D" instance=ExtResource("4_kuutn")]
 position = Vector2(422, 271)
