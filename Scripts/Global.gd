@@ -1,6 +1,10 @@
 extends Node
 
-# Mic
+# refs
+var main_scene
+var bombs = []
+
+# mics
 const MIN_DB: int = 80
 var volume = 0.0
 var energy = 0.0

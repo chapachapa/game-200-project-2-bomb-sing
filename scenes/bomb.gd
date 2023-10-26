@@ -10,7 +10,8 @@ var explosion_particle = preload("res://scenes/particles/explosion_particle.tscn
 func _ready():
 	var devices = AudioServer.get_input_device_list()
 	#print(devices)
-
+	
+	Global.bombs.append(self)
 
 func _physics_process(delta):
 	move_local_x(speed)
@@ -52,6 +53,8 @@ func on_damage():
 		if i.has_method("on_shocked"):
 			i.on_shocked(get_global_position(), 1000)
 	
+	Global.main_scene.bomb_destroyed()
+	Global.bombs.erase(self)
 	emit_signal("bomb_destroyed")
 	
 	queue_free()

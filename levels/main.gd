@@ -13,11 +13,12 @@ var time_delay
 
 # Ref
 var bomb = preload("res://scenes/bomb.tscn")
-var current_bomb
 var camera_following = false
 
 
 func _ready():
+	Global.main_scene = self
+	
 	# Initialize the syncing
 	time_begin = Time.get_ticks_usec()
 	time_delay = AudioServer.get_time_to_next_mix() + AudioServer.get_output_latency()
@@ -29,7 +30,13 @@ func _ready():
 
 func _physics_process(delta):
 	if camera_following:
-		$Node2D/Camera2D.set_global_position(current_bomb.get_global_position())
+		# find the centroid position from all bombs
+		var centroid = Vector2()
+		for i in Global.bombs:
+			centroid += i.get_global_position()
+			centroid /= Global.bombs.size()
+
+		$Node2D/Camera2D.set_global_position(centroid)
 
 func _process(_delta):
 	if not $Beat.is_playing():
@@ -81,17 +88,14 @@ func launch_bomb():
 	var b = bomb.instantiate()
 	$Node2D.add_child(b)
 	b.set_global_position(Global.checkpoint)
-	
-	b.connect("bomb_destroyed", bomb_destroyed)
-	
-	current_bomb = b
 
 
 func bomb_destroyed():
-	camera_following = false
-	print("OOPS")
-	
-	await get_tree().create_timer(1.0).timeout
-	
-	launch_bomb()
-	camera_following = true
+	print(Global.bombs.size())
+	if Global.bombs.size() <= 1:
+		camera_following = false
+		
+		await get_tree().create_timer(1.0).timeout
+		
+		launch_bomb()
+		camera_following = true
