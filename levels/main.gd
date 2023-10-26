@@ -88,12 +88,11 @@ func launch_bomb():
 	var b = bomb.instantiate()
 	$Node2D.add_child(b)
 	b.set_global_position(Global.checkpoint)
-	
-	b.connect("bomb_destroyed", bomb_destroyed)
 
 
 func bomb_destroyed():
-	if Global.bombs.size() <= 0:
+	print(Global.bombs.size())
+	if Global.bombs.size() <= 1:
 		camera_following = false
 		
 		await get_tree().create_timer(1.0).timeout

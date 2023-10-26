@@ -13,7 +13,6 @@ func _ready():
 	
 	Global.bombs.append(self)
 
-
 func _physics_process(delta):
 	move_local_x(speed)
 	
@@ -54,6 +53,7 @@ func on_damage():
 		if i.has_method("on_shocked"):
 			i.on_shocked(get_global_position(), 1000)
 	
+	Global.main_scene.bomb_destroyed()
 	Global.bombs.erase(self)
 	emit_signal("bomb_destroyed")
 	

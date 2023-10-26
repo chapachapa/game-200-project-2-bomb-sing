@@ -79,7 +79,23 @@ position = Vector2(2624, 256)
 position = Vector2(3008, 256)
 
 [node name="Touchpoint" parent="Node2D" instance=ExtResource("7_pxgp8")]
-position = Vector2(-1088, 0)
+position = Vector2(-832, 0)
+
+[node name="Touchpoint3" parent="Node2D" instance=ExtResource("7_pxgp8")]
+position = Vector2(-2752, 0)
+type = 1
+
+[node name="Touchpoint5" parent="Node2D" instance=ExtResource("7_pxgp8")]
+position = Vector2(-1792, 256)
+type = 1
+
+[node name="Touchpoint6" parent="Node2D" instance=ExtResource("7_pxgp8")]
+position = Vector2(-1468, -192)
+type = 1
+
+[node name="Touchpoint4" parent="Node2D" instance=ExtResource("7_pxgp8")]
+position = Vector2(-2304, -197)
+type = 1
 
 [node name="Touchpoint2" parent="Node2D" instance=ExtResource("7_pxgp8")]
 position = Vector2(1216, 0)
