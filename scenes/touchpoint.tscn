@@ -1,11 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://tedcqptfcj86"]
+[gd_scene load_steps=4 format=3 uid="uid://tedcqptfcj86"]
 
 [ext_resource type="Script" path="res://scenes/touchpoint.gd" id="1_evnkn"]
 [ext_resource type="Texture2D" uid="uid://cwha5euryii5n" path="res://images/download.png" id="2_op4yx"]
-[ext_resource type="Texture2D" uid="uid://duax85nei6ioi" path="res://images/ph-note.png" id="2_uarqb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lcb8t"]
-size = Vector2(128, 1664)
+size = Vector2(128, 128)
 
 [node name="Touchpoint" type="Area2D"]
 collision_layer = 8
@@ -13,19 +12,12 @@ collision_mask = 6
 monitorable = false
 script = ExtResource("1_evnkn")
 
-[node name="Ph-note" type="Sprite2D" parent="."]
-z_index = -10
-position = Vector2(3.8147e-06, 64)
-scale = Vector2(0.444444, 13.1613)
-texture = ExtResource("2_uarqb")
-
 [node name="Download" type="Sprite2D" parent="."]
 z_index = -10
 scale = Vector2(0.628426, 0.628426)
 texture = ExtResource("2_op4yx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 64)
 shape = SubResource("RectangleShape2D_lcb8t")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
