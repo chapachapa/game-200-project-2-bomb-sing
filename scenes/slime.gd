@@ -1,4 +1,5 @@
 extends RigidBody2D
+var isDown = false
 
 func _physics_process(delta):
 	pass
@@ -9,7 +10,14 @@ func on_beat(beat):
 
 
 func on_bar(bar):
-	apply_impulse(Vector2.UP * 500)
+	##apply_impulse(Vector2.UP * 500)
+	if(!isDown):
+		$AnimationPlayer.play("squash_down")
+		isDown = true
+	elif(isDown):
+		$AnimationPlayer.play("squash_up")
+		isDown = false
+	
 
 
 func on_damage():
