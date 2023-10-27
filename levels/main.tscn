@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dkoaegwxsm1q8"]
+[gd_scene load_steps=21 format=3 uid="uid://dkoaegwxsm1q8"]
 
 [ext_resource type="Script" path="res://levels/main.gd" id="1_tqmxc"]
 [ext_resource type="Script" path="res://Scripts/ShakeCamera.gd" id="2_0c5b6"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cqu10vt0p5vs5" path="res://images/arroww.png" id="8_o7wn8"]
 [ext_resource type="Texture2D" uid="uid://cy5jf3o15e1h4" path="res://images/tile_map1.png" id="8_u0oom"]
 [ext_resource type="PackedScene" uid="uid://c1urp1c26d8a" path="res://scenes/glass_tile.tscn" id="8_v25kg"]
+[ext_resource type="FontFile" uid="uid://b7msb1u02rrp5" path="res://images/04B_30__.TTF" id="11_g8y4i"]
 [ext_resource type="AudioStream" uid="uid://cf8c32nss8crj" path="res://audio/StringsNoDrums.wav" id="11_jjufv"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_id1y7"]
@@ -324,13 +325,80 @@ position = Vector2(10478, 608)
 [node name="Slime17" parent="Node2D" instance=ExtResource("4_kuutn")]
 position = Vector2(10584, 776)
 
-[node name="Label" type="Label" parent="Node2D"]
-offset_left = 10368.0
+[node name="ThankyouText" type="RichTextLabel" parent="Node2D"]
+z_index = -50
+offset_left = 10496.0
 offset_top = -256.0
-offset_right = 10573.0
-offset_bottom = -230.0
-scale = Vector2(8.00118, 8.00118)
-text = "THANK YOU FOR PLAYING!"
+offset_right = 11456.0
+offset_bottom = 64.0
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("11_g8y4i")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "
+[center][wave amp=50.0 freq=5.0 connected=1][rainbow freq=1.0 sat=0.8 val=0.8]Thank you for playing![/rainbow][/wave][/center]"
+scroll_active = false
+
+[node name="ThankyouText2" type="RichTextLabel" parent="Node2D"]
+z_index = -50
+offset_left = 6464.0
+offset_top = 128.0
+offset_right = 7424.0
+offset_bottom = 448.0
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("11_g8y4i")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "
+[center][wave amp=50.0 freq=5.0 connected=1][rainbow freq=1.0 sat=0.8 val=0.8]Move with the Rhythm[/rainbow][/wave][/center]"
+scroll_active = false
+
+[node name="ThankyouText3" type="RichTextLabel" parent="Node2D"]
+z_index = -50
+offset_left = 832.0
+offset_top = 64.0
+offset_right = 1792.0
+offset_bottom = 384.0
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("11_g8y4i")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "
+[center][wave amp=50.0 freq=5.0 connected=1][rainbow freq=1.0 sat=0.8 val=0.8]Be Loud! Or Quiet :)[/rainbow][/wave][/center]"
+scroll_active = false
+
+[node name="ThankyouText4" type="RichTextLabel" parent="Node2D"]
+z_index = -50
+offset_left = -2112.0
+offset_top = -576.0
+offset_right = -1152.0
+offset_bottom = -256.0
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("11_g8y4i")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "
+[center][wave amp=50.0 freq=5.0 connected=1][rainbow freq=1.0 sat=0.8 val=0.8]Blow It Up![/rainbow][/wave][/center]"
+scroll_active = false
+
+[node name="ThankyouText5" type="RichTextLabel" parent="Node2D"]
+z_index = -50
+offset_left = -3776.0
+offset_top = -512.0
+offset_right = -2816.0
+offset_bottom = -192.0
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("11_g8y4i")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "
+[center][wave amp=50.0 freq=5.0 connected=1][rainbow freq=1.0 sat=0.8 val=0.8]Sing into the Mic![/rainbow][/wave][/center]"
+scroll_active = false
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Node2D"]
 

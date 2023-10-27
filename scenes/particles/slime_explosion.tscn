@@ -39,14 +39,15 @@ autostart = true
 z_index = 100
 z_as_relative = false
 offset_left = -215.0
-offset_top = -152.0
+offset_top = -215.0
 offset_right = 216.0
 offset_bottom = -30.0
 theme_override_constants/outline_size = 20
 theme_override_fonts/normal_font = ExtResource("3_g0psy")
 theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
-text = "[center][wave amp=50.0 freq=5.0 connected=1][rainbow freq=1.0 sat=0.8 val=0.8]SLime Eliminated[/rainbow][/wave][/center]"
+text = "
+[center][wave amp=50.0 freq=5.0 connected=1][rainbow freq=1.0 sat=0.8 val=0.8]SLime Eliminated[/rainbow][/wave][/center]"
 scroll_active = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
