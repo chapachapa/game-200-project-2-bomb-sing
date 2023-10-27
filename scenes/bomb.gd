@@ -6,7 +6,6 @@ signal bomb_destroyed
 
 var explosion_particle = preload("res://scenes/particles/explosion_particle.tscn")
 
-
 func _ready():
 	var devices = AudioServer.get_input_device_list()
 	#print(devices)

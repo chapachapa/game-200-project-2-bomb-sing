@@ -14,6 +14,7 @@ var time_delay
 # Ref
 var bomb = preload("res://scenes/bomb.tscn")
 var camera_following = false
+var explosionSfx = preload("res://scenes/explosion_sfx.tscn")
 
 # show/hide UI
 var showVisualizer = true;
@@ -108,3 +109,6 @@ func bomb_destroyed():
 		
 		launch_bomb()
 		camera_following = true
+		
+	# add soundeffect
+	add_child(explosionSfx.instantiate())
