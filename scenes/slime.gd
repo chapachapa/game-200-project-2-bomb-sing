@@ -1,6 +1,9 @@
 extends RigidBody2D
 var isDown = false
 
+var explosion_particle = preload("res://scenes/particles/slime_explosion.tscn")
+
+
 func _physics_process(delta):
 	pass
 
@@ -21,6 +24,10 @@ func on_bar(bar):
 
 
 func on_damage():
+	var e = explosion_particle.instantiate()
+	get_parent().add_child(e)
+	e.set_global_position(get_global_position())
+	
 	queue_free()
 
 

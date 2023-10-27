@@ -2,6 +2,7 @@ extends Node
 
 # refs
 var main_scene
+var camera
 var bombs = []
 
 # mics

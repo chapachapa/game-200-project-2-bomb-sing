@@ -48,6 +48,8 @@ func on_damage():
 	get_parent().add_child(e)
 	e.set_global_position(get_global_position())
 	
+	# add explosion
+	Global.camera.trauma = 1.0
 	
 	# add soundeffect
 	get_parent().add_child(explosionSfx.instantiate())
