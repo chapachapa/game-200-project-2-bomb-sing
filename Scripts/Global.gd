@@ -15,8 +15,8 @@ const MIN_FREQ = 0;
 const FREQ_INTERVAL = 10;
 var magnitueds_by_range = [];
 var highestFrequencyIndex = -1;
-var upperFreqIndex = 35;
-var lowerFreqIndex = 10
+var upperFreqIndex = 40;
+var lowerFreqIndex = 16;
 var volumeThreshold = 0.05;
 
 # player state
