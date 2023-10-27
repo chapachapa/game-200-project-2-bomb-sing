@@ -61,8 +61,8 @@ func on_damage():
 		if i.has_method("on_shocked"):
 			i.on_shocked(get_global_position(), 1000)
 	
-	Global.main_scene.bomb_destroyed()
 	Global.bombs.erase(self)
+	Global.main_scene.bomb_destroyed()
 	emit_signal("bomb_destroyed")
 	
 	queue_free()

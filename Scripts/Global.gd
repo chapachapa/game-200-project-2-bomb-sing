@@ -25,12 +25,12 @@ var checkpoint = Vector2.ZERO
 
 
 func _ready():
-	spectrum_analyzer = AudioServer.get_bus_effect_instance(3, 0)
+	spectrum_analyzer = AudioServer.get_bus_effect_instance(4, 0)
 
 
 func _process(delta):
 	# MIC Processing
-	volume = db_to_linear(AudioServer.get_bus_peak_volume_left_db(3, 0))
+	volume = db_to_linear(AudioServer.get_bus_peak_volume_left_db(4, 0))
 	
 	# find the pitch
 	# magnitude = linear_to_db(spectrum_analyzer.get_magnitude_for_frequency_range(0, 200).length())

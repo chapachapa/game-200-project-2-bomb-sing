@@ -30,6 +30,8 @@ func _on_area_entered(area):
 				get_parent().add_child(e)
 				e.set_global_position(get_global_position())
 				
+				queue_free()
+				
 			TOUCH.DOUBLE:
 				var b = bomb.instantiate()
 				get_parent().add_child(b)
@@ -43,4 +45,5 @@ func _on_area_entered(area):
 				get_parent().add_child(e)
 				e.set_global_position(get_global_position())
 				
-		queue_free()
+				queue_free()
+		
