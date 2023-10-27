@@ -5,6 +5,7 @@ signal bomb_destroyed
 @export var speed = 5
 
 var explosion_particle = preload("res://scenes/particles/explosion_particle.tscn")
+var explosionSfx = preload("res://scenes/explosion_sfx.tscn")
 
 func _ready():
 	var devices = AudioServer.get_input_device_list()
@@ -46,6 +47,10 @@ func on_damage():
 	var e = explosion_particle.instantiate()
 	get_parent().add_child(e)
 	e.set_global_position(get_global_position())
+	
+	
+	# add soundeffect
+	get_parent().add_child(explosionSfx.instantiate())
 	
 	# effect things around the object
 	for i in $ExtraRange.get_overlapping_bodies():

@@ -110,5 +110,3 @@ func bomb_destroyed():
 		launch_bomb()
 		camera_following = true
 		
-	# add soundeffect
-	add_child(explosionSfx.instantiate())
