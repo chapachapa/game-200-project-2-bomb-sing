@@ -22,9 +22,9 @@ func _physics_process(delta):
 
 
 func on_beat(beat):
-	$Sprite.set_scale(Vector2(0.314, 0.314) * 1.2)
+	$Sprite.set_scale(Vector2(3, 3) * 1.2)
 	var tween = get_tree().create_tween().set_trans(Tween.TRANS_BOUNCE)
-	tween.tween_property($Sprite, "scale", Vector2(0.314, 0.314), 0.2)
+	tween.tween_property($Sprite, "scale", Vector2(3, 3), 0.2)
 
 
 func on_bar(bar):

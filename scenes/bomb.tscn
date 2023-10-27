@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://h3iptqwsmuh3"]
 
 [ext_resource type="Script" path="res://scenes/bomb.gd" id="1_eotk0"]
-[ext_resource type="Texture2D" uid="uid://dr1agl7liiweq" path="res://images/Bob-omb_29.webp" id="2_joo4q"]
+[ext_resource type="Texture2D" uid="uid://cy8yyyhgdr1qp" path="res://images/bomb.png" id="2_yn8ki"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2ryed"]
 radius = 64.0
@@ -18,8 +18,9 @@ collision_mask = 15
 script = ExtResource("1_eotk0")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.314175, 0.314175)
-texture = ExtResource("2_joo4q")
+position = Vector2(0, -21)
+scale = Vector2(3, 3)
+texture = ExtResource("2_yn8ki")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_2ryed")
