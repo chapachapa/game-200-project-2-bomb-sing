@@ -19,10 +19,12 @@ func _physics_process(delta):
 	# move the bomb by pitch and volume
 	if(Global.volume > Global.volumeThreshold):
 		move_local_y((Global.energy - 0.5) * -1 * 20)
+		
+	$Sprite.rotate(delta * 6 * Global.energy)
 
 
 func on_beat(beat):
-	$Sprite.set_scale(Vector2(3, 3) * 1.2)
+	$Sprite.set_scale(Vector2(3, 3) * 1.3)
 	var tween = get_tree().create_tween().set_trans(Tween.TRANS_BOUNCE)
 	tween.tween_property($Sprite, "scale", Vector2(3, 3), 0.2)
 

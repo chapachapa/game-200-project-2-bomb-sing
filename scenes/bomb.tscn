@@ -28,10 +28,12 @@ shape = SubResource("CircleShape2D_2ryed")
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 z_index = -20
 z_as_relative = false
+lifetime = 2.0
 emission_shape = 1
 emission_sphere_radius = 16.51
 gravity = Vector2(0, 0)
-scale_amount_max = 31.3
+scale_amount_min = 8.58
+scale_amount_max = 69.18
 color = Color(0.733333, 0.631373, 0.572549, 0.501961)
 color_ramp = SubResource("Gradient_wb4x3")
 
