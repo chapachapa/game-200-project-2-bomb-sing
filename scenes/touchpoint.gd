@@ -7,7 +7,11 @@ var bomb = preload("res://scenes/bomb.tscn")
 
 
 func _ready():
-	pass
+	match type:
+		TOUCH.CHECKPOINT:
+			$Checkpoint.show()
+		TOUCH.DOUBLE:
+			$Double.show()
 
 
 func _on_body_entered(body):
