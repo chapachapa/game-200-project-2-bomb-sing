@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bd51smv6atdfy"]
 
 [ext_resource type="Script" path="res://scenes/breakable_wall.gd" id="1_usx17"]
-[ext_resource type="Texture2D" uid="uid://dn52edvw0nvlq" path="res://images/Wood_Block.png" id="2_qbive"]
+[ext_resource type="Texture2D" uid="uid://dt7arh7ycnx7o" path="res://images/tile_map2.png" id="2_xccvc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l3wlj"]
 size = Vector2(128, 128)
@@ -10,7 +10,7 @@ size = Vector2(128, 128)
 script = ExtResource("1_usx17")
 
 [node name="WoodBlock" type="Sprite2D" parent="."]
-texture = ExtResource("2_qbive")
+texture = ExtResource("2_xccvc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_l3wlj")

@@ -13,6 +13,9 @@ func _process(delta):
 		$CollisionShape2D.disabled = true
 		var tween = get_tree().create_tween()
 		tween.tween_property($Sprite2D, "modulate", Color(Color.RED, 0.0), 0.2)
+	elif Global.volume < fadeVolume && Global.volume > fadeVolume/3:
+		var tween = get_tree().create_tween()
+		tween.tween_property($Sprite2D, "modulate", Color(0.4, 0.0, 0.0, 1.0), 0.2)
 	else:
 		$CollisionShape2D.disabled = false
 		var tween = get_tree().create_tween()
