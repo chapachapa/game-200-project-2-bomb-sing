@@ -71,9 +71,15 @@ func _process(_delta):
 		$CanvasLayer/SpectrumVisualizer.set_visible(!$CanvasLayer/SpectrumVisualizer.visible)
 		
 	if Global.volume > Global.volumeThreshold:
-		$CanvasLayer/Control/PitchDirectionIndicator.rotation_degrees = -180*(Global.energy-0.5)
+		var targetAngle = -180*(Global.energy-0.5)
+		# $CanvasLayer/Control/PitchDirectionIndicator.rotation_degrees = targetAngle
+		var tween = get_tree().create_tween()
+		tween.tween_property($CanvasLayer/Control/PitchDirectionIndicator, "rotation_degrees", targetAngle , 0.2)
 	else:
-		$CanvasLayer/Control/PitchDirectionIndicator.rotation_degrees = 0
+		# $CanvasLayer/Control/PitchDirectionIndicator.rotation_degrees = 0
+		
+		var tween = get_tree().create_tween()
+		tween.tween_property($CanvasLayer/Control/PitchDirectionIndicator, "rotation_degrees", 0 , 0.2)
 
 func on_beat(beat):
 	#print("beat %d" % beat)
