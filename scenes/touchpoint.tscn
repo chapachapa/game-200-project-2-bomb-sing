@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://tedcqptfcj86"]
+[gd_scene load_steps=5 format=3 uid="uid://tedcqptfcj86"]
 
 [ext_resource type="Script" path="res://scenes/touchpoint.gd" id="1_evnkn"]
-[ext_resource type="Texture2D" uid="uid://cwha5euryii5n" path="res://images/download.png" id="2_op4yx"]
+[ext_resource type="Texture2D" uid="uid://da6m6pds8q23u" path="res://images/cd0f614e33df575.png" id="2_xov4b"]
+[ext_resource type="Texture2D" uid="uid://ccp2uhjxwma5d" path="res://images/80591dd3f9b6da7.png" id="3_od7r0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lcb8t"]
-size = Vector2(128, 128)
+size = Vector2(256, 256)
 
 [node name="Touchpoint" type="Area2D"]
 collision_layer = 8
@@ -12,10 +13,19 @@ collision_mask = 6
 monitorable = false
 script = ExtResource("1_evnkn")
 
-[node name="Download" type="Sprite2D" parent="."]
+[node name="Checkpoint" type="Sprite2D" parent="."]
+visible = false
 z_index = -10
-scale = Vector2(0.628426, 0.628426)
-texture = ExtResource("2_op4yx")
+position = Vector2(-3.8147e-06, -64)
+scale = Vector2(0.399874, 0.399874)
+texture = ExtResource("2_xov4b")
+
+[node name="Double" type="Sprite2D" parent="."]
+visible = false
+z_index = -10
+position = Vector2(-2.27374e-13, -3.8147e-06)
+scale = Vector2(0.399874, 0.399874)
+texture = ExtResource("3_od7r0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_lcb8t")

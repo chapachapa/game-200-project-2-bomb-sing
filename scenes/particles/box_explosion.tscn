@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhvdefrjncm1i"]
+
+[ext_resource type="Script" path="res://scenes/particles/explosion_particle.gd" id="1_y8ddb"]
+[ext_resource type="Texture2D" uid="uid://dt7arh7ycnx7o" path="res://images/tile_map2.png" id="2_bu3jn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oc7rs"]
+atlas = ExtResource("2_bu3jn")
+region = Rect2(1, 0.5, 65, 62)
+
+[sub_resource type="Curve" id="Curve_7h1db"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0322581, 1), 0.0, 0.0, 0, 0, Vector2(0.100806, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.28733, 0.0, 0, 0]
+point_count = 4
+
+[node name="ExplosionParticle" type="Node2D"]
+script = ExtResource("1_y8ddb")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 4
+lifetime = 3.0
+one_shot = true
+explosiveness = 0.88
+randomness = 1.0
+lifetime_randomness = 0.48
+texture = SubResource("AtlasTexture_oc7rs")
+direction = Vector2(0, -1)
+initial_velocity_max = 840.91
+angular_velocity_max = 130.91
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_7h1db")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

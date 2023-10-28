@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct4kek2w1gxbc"]
+
+[ext_resource type="Script" path="res://scenes/volume_fading_block.gd" id="1_4d8jk"]
+[ext_resource type="Texture2D" uid="uid://3jx5u0xkinkj" path="res://images/Iron_Block.png" id="1_4t6aj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_prl8r"]
+size = Vector2(126, 126)
+
+[node name="VolumeFadingBlock" type="StaticBody2D"]
+script = ExtResource("1_4d8jk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4t6aj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_prl8r")

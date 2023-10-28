@@ -14,9 +14,10 @@ var time_delay
 # Ref
 var bomb = preload("res://scenes/bomb.tscn")
 var camera_following = false
+var explosionSfx = preload("res://scenes/explosion_sfx.tscn")
 
 # show/hide UI
-var showVisualizer = true;
+var showVisualizer = false;
 
 func _ready():
 	Global.main_scene = self
@@ -29,6 +30,9 @@ func _ready():
 	launch_bomb()
 	camera_following = true
 
+func _input(event):
+	if Input.is_action_just_pressed("quit"):
+		get_tree().quit()
 
 func _physics_process(delta):
 	if camera_following:
@@ -70,10 +74,18 @@ func _process(_delta):
 		$CanvasLayer/SpectrumVisualizer.set_visible(!$CanvasLayer/SpectrumVisualizer.visible)
 		
 	if Global.volume > Global.volumeThreshold:
-		$CanvasLayer/Control/PitchDirectionIndicator.rotation_degrees = -180*(Global.energy-0.5)
+		var targetAngle = -180*(Global.energy-0.5)
+		# $CanvasLayer/Control/PitchDirectionIndicator.rotation_degrees = targetAngle
+		var tween = get_tree().create_tween()
+		tween.tween_property($CanvasLayer/Control/PitchDirectionIndicator, "rotation_degrees", targetAngle , 0.2)
+		tween.parallel().tween_property($CanvasLayer/Control/PitchDirectionIndicator, "scale", lerp(Vector2(0.3, 0.3), Vector2(0.75, 0.75), Global.volume), 0.2)
 	else:
-		$CanvasLayer/Control/PitchDirectionIndicator.rotation_degrees = 0
-
+		# $CanvasLayer/Control/PitchDirectionIndicator.rotation_degrees = 0
+		
+		var tween = get_tree().create_tween()
+		tween.tween_property($CanvasLayer/Control/PitchDirectionIndicator, "rotation_degrees", 0 , 0.2)
+		tween.parallel().tween_property($CanvasLayer/Control/PitchDirectionIndicator, "scale", lerp(Vector2(0.3, 0.3), Vector2(0.75, 0.75), Global.volume), 0.2)
+		
 func on_beat(beat):
 	#print("beat %d" % beat)
 	
@@ -101,10 +113,11 @@ func launch_bomb():
 
 func bomb_destroyed():
 	print(Global.bombs.size())
-	if Global.bombs.size() <= 1:
+	if Global.bombs.size() <= 0:
 		camera_following = false
 		
 		await get_tree().create_timer(1.0).timeout
 		
 		launch_bomb()
 		camera_following = true
+		

@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5rq8eggsyu3m"]
+
+[ext_resource type="Script" path="res://scenes/particles/explosion_particle.gd" id="1_raiyt"]
+[ext_resource type="Texture2D" uid="uid://ccp2uhjxwma5d" path="res://images/80591dd3f9b6da7.png" id="2_cpmi2"]
+[ext_resource type="FontFile" uid="uid://b7msb1u02rrp5" path="res://images/04B_30__.TTF" id="3_hv3yi"]
+
+[sub_resource type="Curve" id="Curve_7h1db"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0322581, 1), 0.0, 0.0, 0, 0, Vector2(0.100806, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.28733, 0.0, 0, 0]
+point_count = 4
+
+[node name="ExplosionParticle" type="Node2D"]
+script = ExtResource("1_raiyt")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 6
+lifetime = 3.0
+one_shot = true
+explosiveness = 0.88
+randomness = 1.0
+lifetime_randomness = 0.48
+texture = ExtResource("2_cpmi2")
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 840.91
+angular_velocity_max = 130.91
+damping_min = 37.879
+damping_max = 69.697
+scale_amount_min = 0.2
+scale_amount_max = 0.5
+scale_amount_curve = SubResource("Curve_7h1db")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+z_index = 100
+z_as_relative = false
+offset_left = -215.0
+offset_top = -209.0
+offset_right = 216.0
+offset_bottom = -30.0
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("3_hv3yi")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "
+[center][wave amp=50.0 freq=5.0 connected=1][rainbow freq=1.0 sat=0.8 val=0.8]DOUBLE FUN[/rainbow][/wave][/center]"
+scroll_active = false
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
