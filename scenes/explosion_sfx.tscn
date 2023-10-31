@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7ysxreiicm2j"]
+[gd_scene load_steps=3 format=3 uid="uid://csh0q7bnkrjeh"]
 
 [ext_resource type="AudioStream" uid="uid://cegvah72ut6q1" path="res://audio/ExplosionCmaj2.wav" id="1_d7uxe"]
 [ext_resource type="Script" path="res://ExplosionSFX.gd" id="1_neish"]
